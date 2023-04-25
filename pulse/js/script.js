@@ -51,46 +51,4 @@ $(document).ready(function(){
         $('.overlay, #order').fadeIn('slow');
       })
     });
-
-    function valideForms(form){
-      $(form).validate({
-        rules: {
-          name: "required",
-          phone: "required",
-          email: {
-            required: true,
-            email: true
-          }
-        },
-        messages: {
-          name: "Пожалуйста, введите свое имя",
-          phone: "Пожалуйста, введите свой номер телефона",
-          email: {
-            required: "Пожалуйста, введите свою почту",
-            email: "Неправильно введен адрес почты"
-          }
-        }
-      });
-    };
-    valideForms('#consultation-form');
-    valideForms('#order form');
-    valideForms('#consultation form');
-
-    $('input[name=phone]').mask("+7 (999) 999-9999");
-
-    // Smooth scroll and pageup
-
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 1600) {
-        $('.pageup').fadeIn();
-      } else {
-        $('.pageup').fadeOut();
-      }
-    });
-
-    $("a[href^=#up]").click(function(){
-      var _href = $(this).attr("href");
-      $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-      return false;
-    }); 
   });
